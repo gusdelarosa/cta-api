@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace CTAAPIWrapper.Models
 {
-    public class ETA
+    public class ETA : Train
     {
         [JsonProperty("staId")]
         public int StationId { get; set; }
@@ -19,17 +19,8 @@ namespace CTAAPIWrapper.Models
         [JsonProperty("stpDe")]
         public string StopDescription { get; set; }
 
-        [JsonProperty("rn")]
-        public int RunNumber { get; set; }
-
         [JsonProperty("rt")]
         public string RouteName { get; set; }
-
-        [JsonProperty("desSt")]
-        public int DestinationStation { get; set; }
-
-        [JsonProperty("destNm")]
-        public string DestinationDescription { get; set; }
 
         [JsonProperty("arrT")]
         public DateTime AttivalTime { get; set; }
@@ -52,6 +43,6 @@ namespace CTAAPIWrapper.Models
         [JsonProperty("heading")]
         public int? DegreesDirection { get; set; }
 
-        private int TimeInMinutes { get { return (AttivalTime - DateTime.Now).Minutes; } }        
+        private int TimeInMinutes { get { return (AttivalTime - DateTime.Now).Minutes; } }
     }
 }

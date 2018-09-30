@@ -22,20 +22,20 @@ namespace CTAAPIWrapper.Models
         [Required]
         //[JsonProperty("key")]
         [JsonIgnore]
-        public string Token { get; internal set; }        
+        public string Token { get; internal set; }
 
         [JsonIgnore]
-        public string QueryString 
+        public string QueryString
         {
             get
-            {                
+            {
                 IEnumerable<KeyValuePair<string, string>> values = CTARequestBase.GetQueryString(this);
 
                 IEnumerable<string> keyValues = values.Select<KeyValuePair<string, string>, string>(pair => string.Format("{0}={1}", pair.Key, pair.Value));
 
                 return string.Join("&", keyValues);
             }
-        }  
+        }
 
         private static IEnumerable<KeyValuePair<string, string>> GetQueryString(object value, string startingName = null)
         {
@@ -72,6 +72,8 @@ namespace CTAAPIWrapper.Models
                         // {
                         //     values.Add(name, theValue.ToString());
                         // }
+                        var listOfStrings = propertyValue as List<string>;
+                        values.Add(name, listOfStrings.FirstOrDefault());
                     }
                     else if (!propertyValue.GetType().IsByRef)
                     {
