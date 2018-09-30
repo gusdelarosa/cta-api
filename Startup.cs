@@ -27,7 +27,6 @@ namespace CTAAPIWrapper
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            // services.AddTransient<ICTAService,CTATrainAPIClient>();
             services.AddHttpClient<ICTATrainClient, CTATrainClient>();
         }
 
