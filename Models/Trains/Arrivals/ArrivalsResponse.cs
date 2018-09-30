@@ -5,9 +5,9 @@ using Newtonsoft.Json;
 
 namespace CTAAPIWrapper.Models
 {
-    public class ArrivalsResponse
+    public class ArrivalsResponse : TrainResponseBase
     {
         [JsonProperty("eta")]
-        public IEnumerable<ETA> ETAs { get; set; }        
+        public IEnumerable<ETA> ETAs { get; set; }
     }
 }

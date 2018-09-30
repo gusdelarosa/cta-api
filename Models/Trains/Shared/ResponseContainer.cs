@@ -1,8 +1,9 @@
 using Newtonsoft.Json;
 
 
-namespace CTAAPIWrapper.Models{
-    
+namespace CTAAPIWrapper.Models
+{
+
     public class ResponseContainer<T>
     {
         [JsonProperty("ctatt")]

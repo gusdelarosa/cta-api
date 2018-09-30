@@ -1,6 +1,6 @@
 namespace CTAAPIWrapper.Models
 {
-    public class FollowTrainResponse
-    {      
+    public class FollowTrainResponse : TrainResponseBase
+    {
     }
 }
