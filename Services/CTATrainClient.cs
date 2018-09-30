@@ -42,11 +42,11 @@ namespace  CTAAPIWrapper.Services
 
             if (id > 39999)
             {
-                arrivalRequest.StopId = id.ToString();
+                arrivalRequest.StationId = id.ToString();   
             }
             else
             {
-                    arrivalRequest.StationId = id.ToString();   
+                arrivalRequest.StopId = id.ToString();
             }
 
             return GetAsync<ArrivalsRequest, ArrivalsResponse>(arrivalRequest);
