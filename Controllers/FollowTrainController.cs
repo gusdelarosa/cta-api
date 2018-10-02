@@ -7,14 +7,14 @@ using CTAAPIWrapper.Models;
 
 
 namespace CTAAPIWrapper.Controllers
-{    
+{
     [Route("api/[controller]")]
     [ApiController]
     public class FollowTrainController : ControllerBase
     {
         private ICTATrainClient _ctaService;
 
-        public FollowTrainController (ICTATrainClient ctaService)
+        public FollowTrainController(ICTATrainClient ctaService)
         {
             _ctaService = ctaService;
         }
@@ -22,16 +22,16 @@ namespace CTAAPIWrapper.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> FollowTrain(int id)
         {
-            try 
+            try
             {
                 var followTrain = await _ctaService.FollowTrain(id);
                 //Error handling
                 return Ok(followTrain);
             }
-            catch(Exception ex)
-            {                
+            catch (Exception ex)
+            {
                 return BadRequest();
             }
-        }        
+        }
     }
 }
