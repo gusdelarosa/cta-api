@@ -1,4 +1,4 @@
-# CTAAPIWrapper
+# cta-api
 ```
 docker build -t Cta-Api .
 
