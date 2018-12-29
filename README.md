@@ -2,7 +2,7 @@
 Chicago Transit Authority API implementation in .NET Core
 
 ```
-docker build -t Cta-Api .
+docker build -t cta-Api .
 
 ```
 ```
